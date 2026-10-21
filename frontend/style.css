@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f5fb;
+    color: #202944;
+}
+
+header {
+    background: #283b80;
+    color: white;
+    padding: 28px max(6%, calc((100% - 1050px) / 2));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+header p {
+    margin: 0;
+    color: #dbe4ff;
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: white;
+    color: #283b80;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+main {
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.stat-card, .panel, .task-card {
+    background: white;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 5px 20px #1725540c;
+}
+
+.stat-card span {
+    color: #667085;
+    font-size: 14px;
+}
+
+.stat-card h2 {
+    margin: 12px 0 0;
+    font-size: 30px;
+    color: #283b80;
+}
+
+.panel {
+    margin-bottom: 28px;
+}
+
+.panel h2, .task-heading h2 {
+    margin-top: 0;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5daea;
+    border-radius: 8px;
+    font: inherit;
+    background: white;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid #b7c7ff;
+    border-color: #526be0;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    border-radius: 8px;
+    padding: 11px 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+form button {
+    background: #344ca4;
+    color: white;
+    margin-top: 5px;
+}
+
+button:hover {
+    opacity: 0.88;
+}
+
+.task-section {
+    margin-bottom: 35px;
+}
+
+.task-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.task-heading input {
+    max-width: 260px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.filter {
+    background: #e4e8f5;
+    color: #34405d;
+}
+
+.filter.active {
+    background: #344ca4;
+    color: white;
+}
+
+#taskList {
+    display: grid;
+    gap: 12px;
+}
+
+.task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    border-left: 4px solid #526be0;
+}
+
+.task-card h3 {
+    margin: 0 0 8px;
+    overflow-wrap: anywhere;
+}
+
+.task-card p {
+    margin: 0 0 12px;
+    color: #667085;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.task-card.done {
+    border-left-color: #25966b;
+}
+
+.task-card.done h3 {
+    text-decoration: line-through;
+    color: #7b8497;
+}
+
+.status {
+    font-size: 12px;
+    color: #344ca4;
+    background: #edf0ff;
+    padding: 5px 8px;
+    border-radius: 20px;
+}
+
+.task-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 7px;
+}
+
+.complete-btn {
+    background: #e0f5e9;
+    color: #176744;
+}
+
+.edit-btn {
+    background: #e8edff;
+    color: #283b80;
+}
+
+.delete-btn {
+    background: #ffeded;
+    color: #b42318;
+}
+
+.empty {
+    text-align: center;
+    color: #667085;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #667085;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 22px 18px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .stats {
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 14px 10px;
+    }
+
+    .stat-card h2 {
+        font-size: 24px;
+    }
+
+    .task-heading {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .task-heading input {
+        max-width: none;
+    }
+
+    .task-card {
+        flex-direction: column;
+    }
+
+    .task-actions {
+        justify-content: flex-start;
+    }
+}
